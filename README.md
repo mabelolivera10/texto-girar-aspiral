@@ -1,0 +1,1 @@
+# texto-girar-aspiral
