@@ -1,0 +1,90 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-size: 62.5%;
+  background: linear-gradient(135deg, #220101, #5e0202);
+}
+
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.spiral{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  color: #e0ecef;
+  font-family: "sans-serif";
+}
+
+@keyframes spiral{
+  0%{
+    --angle: 0deg;
+  }
+  100%{
+    --angle: 360deg;
+  }
+}
+
+.character{
+  font-size: 2.8rem;
+  color: white;
+  text-transform: uppercase;
+  transform: translateY(calc(sin(var(--angle)) * 100px)) scale(calc(cos(var(--angle)) * 0.5 + 0.5));
+  animation: spiral 4s linear infinite;
+}
+
+@media (max-width: 490px){
+  .character{
+    font-size: 2.2rem
+  }
+}
+
+
+
+.made-with-love {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 15PX; /* Cambiado de "bottom: 10px;" a "top: 0;" */
+  text-align: center;
+  font-size: 10px;
+  z-index: 9999;
+  font-family: arial;
+  color: #ffffff;
+  font-weight: 600;
+}
+.made-with-love i {
+  font-style: normal;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+.made-with-love a {
+  color: #c74f2b;
+  text-decoration: none;
+
+  
+}
+.made-with-love a:hover {
+  text-decoration: underline;
+}
+.made-with-love .dribble img {
+  max-width: 100%;
+  width: 26px;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+}
+
+.made-with-love a {
+  font-weight: bold; /* Añadiendo negrita solo a los enlaces */
+}
